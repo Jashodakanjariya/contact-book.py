@@ -55,6 +55,53 @@ while True:
             print()
             
     elif choice=="3":
+        search_name=input("enter  name :")
+        found=False
+        for contact in contacts:
+         if contact["name"]==search_name:
+            found=True
+            print("contact founded")
+            print("name :",contact["name"])
+            print("phone :",contact["phone"])
+            print("email :",contact["email"])
+            break
+        if found==False:
+            print("contact not found")
+
+    elif choice=="4":
+        delete_contact=input("enter name to delete:")
+        found=False
+        for contact in contacts:
+            if contact["name"]==delete_contact:
+                found=True
+                contacts.remove(contact)
+                save_contacts()
+                print("contact deleted successfully")
+                break
+            
+
+    elif choice=="5":
+        update_name=input("enter name to updatea")
+        found=False
+        for contact in contacts:
+            if contact["name"]==update_name:
+                found=True
+                new=input("enter updated name :")
+                contact["name"]=new
+                save_contacts()
+                print(update_name,"updated successfully")
+                break
+        if found==False:
+          print("contact not founded")
+
+    elif choice=="6":
+        print("thank you")
+        save_contacts()
+        break
+    
+    else:
+        print("invalid choice")
+print("contact book version 2")
 
                  
                  
